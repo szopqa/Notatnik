@@ -363,6 +363,7 @@ public static void main (String[] args){
 		NotatnikMain aplikacja = new NotatnikMain();
 		aplikacja.setVisible(true);
 		System.out.print("GHHHH");
+		System.out.print("GHHHH");System.out.print("GHHHH");
 	}
 	
 }
