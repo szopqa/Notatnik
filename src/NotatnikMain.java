@@ -344,7 +344,25 @@ public class NotatnikMain extends JFrame implements ActionListener{
 			
 //---------------------------COMBO BOX-----------------
 			else if(zrodlo == comboRozmiar){
-					//TODO
+					String rozmiar = comboRozmiar.getSelectedItem().toString();
+					
+					String zaznaczonyTekst = notatnik.getSelectedText();
+					
+					if(rozmiar.equals("10")){
+						//TODO
+					}
+					else if(rozmiar.equals("15")){
+						//TODO
+					}
+					else if(rozmiar.equals("20")){
+						//TODO
+					}
+					else if(rozmiar.equals("25")){
+						//TODO
+					}
+					else if(rozmiar.equals("W³asny")){
+						//TODO Ustawienie w³asnego rozmiaru czcionki
+					}
 			}
 			
 			
