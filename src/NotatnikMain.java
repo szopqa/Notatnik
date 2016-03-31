@@ -380,6 +380,12 @@ public static void main (String[] args){
 		
 		NotatnikMain aplikacja = new NotatnikMain();
 		aplikacja.setVisible(true);
+		//TODO
+		//Ustawienie ComboBoxa
+		//Ustawienie skrótu na polecenie kopiuj i wklej
+		//Ustawienie skrotu na polecenie wyjscie
+		//Dokoñczenie menu Ustawien
+		//Próba zmiany koloru/czcionki tylko dla wybranego fragmentu tekstu 	
 	}
 	
 }
