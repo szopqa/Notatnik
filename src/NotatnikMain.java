@@ -43,6 +43,7 @@ public class NotatnikMain extends JFrame implements ActionListener{
 	JComboBox comboRozmiar;
 		JMenu pmZmienKolor;
 		JMenuItem czarny, niebieski,zolty,zielony,rozowy;
+		JOptionPane wybierzRozmiar;
 			
 	String skopiowanyTekst;
 	
@@ -164,9 +165,9 @@ public class NotatnikMain extends JFrame implements ActionListener{
 			comboRozmiar.setBounds(220, 20,100,20);
 			comboRozmiar.addItem("Zmieñ rozmiar");
 			comboRozmiar.addItem("10");
-			comboRozmiar.addItem("15");
 			comboRozmiar.addItem("20");
-			comboRozmiar.addItem("25");
+			comboRozmiar.addItem("30");
+			comboRozmiar.addItem("40");
 			comboRozmiar.addItem("W³asny");
 				comboRozmiar.addActionListener(this);
 			add(comboRozmiar);
@@ -349,19 +350,26 @@ public class NotatnikMain extends JFrame implements ActionListener{
 					String zaznaczonyTekst = notatnik.getSelectedText();
 					
 					if(rozmiar.equals("10")){
-						//TODO
-					}
-					else if(rozmiar.equals("15")){
-						//TODO
+						notatnik.setFont(new Font("SansSerif",Font.PLAIN,10));
 					}
 					else if(rozmiar.equals("20")){
-						//TODO
+						notatnik.setFont(new Font("SansSerif",Font.PLAIN,20));
 					}
-					else if(rozmiar.equals("25")){
-						//TODO
+					else if(rozmiar.equals("30")){
+						notatnik.setFont(new Font("SansSerif",Font.PLAIN,30));
+					}
+					else if(rozmiar.equals("40")){
+						notatnik.setFont(new Font("SansSerif",Font.PLAIN,40));
 					}
 					else if(rozmiar.equals("W³asny")){
-						//TODO Ustawienie w³asnego rozmiaru czcionki
+						String sRozmiar = JOptionPane.showInputDialog("Podaj rozmiar czcionki: ");
+						try{
+							int Rozmiar = Integer.parseInt(sRozmiar);
+							notatnik.setFont(new Font("SansSerif", Font.PLAIN,Rozmiar));
+						}
+						catch(NumberFormatException e){
+							JOptionPane.showMessageDialog(this, "Liczba musi byæ ca³kowita!");
+						}
 					}
 			}
 			
