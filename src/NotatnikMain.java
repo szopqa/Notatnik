@@ -54,7 +54,8 @@ public class NotatnikMain extends JFrame implements ActionListener{
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setLayout(null);
 			setLocation(490,100);
-	
+			
+			
 			lNaglowek = new JLabel("Notatnik wersja 1.0");
 			lNaglowek.setBounds(50,20,200,20);
 			lNaglowek.setFont(new Font("Serif",Font.BOLD,20));
@@ -247,14 +248,7 @@ public class NotatnikMain extends JFrame implements ActionListener{
 //--------------------------------ZAK£ADKA NARZÊDZIA------------------			
 			
 			else if (zrodlo == MIustawienia){
-					JFrame oknoOpcje = new JFrame();
-					//oknoOpcje.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					oknoOpcje.setVisible(true);
-					oknoOpcje.setSize(400, 400);
-					oknoOpcje.setTitle("Opcje");
-					oknoOpcje.setLayout(null);
-					oknoOpcje.setLocation(getLocation());
-					//TODO 
+					Ustawienia ustawienia = new Ustawienia();
 			}
 			
 			else if (zrodlo == chOpcja){
@@ -389,7 +383,6 @@ public static void main (String[] args){
 		NotatnikMain aplikacja = new NotatnikMain();
 		aplikacja.setVisible(true);
 		//TODO
-		//Ustawienie ComboBoxa
 		//Ustawienie skrótu na polecenie kopiuj i wklej
 		//Ustawienie skrotu na polecenie wyjscie
 		//Dokoñczenie menu Ustawien
