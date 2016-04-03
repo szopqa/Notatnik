@@ -71,8 +71,10 @@ public class NotatnikMain extends JFrame implements ActionListener{
 						menuBar.add(mMenuPlik); // Dodatnie zakladki plik do menu bar
 				
 						MIotworz = new JMenuItem("Otwórz",'O');
+						MIotworz.setAccelerator(KeyStroke.getKeyStroke("ctrl O"));
 							MIotworz.addActionListener(this);
 						MIzapisz = new JMenuItem("Zapisz",'Z');
+						MIzapisz.setAccelerator(KeyStroke.getKeyStroke("ctrl S"));
 							MIzapisz.addActionListener(this);
 						MIwyjscie = new JMenuItem("Wyjœcie");
 						MIwyjscie.setAccelerator(KeyStroke.getKeyStroke("ctrl X")); //Dodanie skrótu klawiszowego
@@ -87,12 +89,13 @@ public class NotatnikMain extends JFrame implements ActionListener{
 						
 						menuBar.add(mMenuNarzedzia); // Dodatnie opcji do menu bar
 			
-						MIkonwerter = new JMenuItem("Konwerter");
+						MIkonwerter = new JMenuItem("Konwerter",'K');
 						MIkonwerter.setEnabled(false);
 							MIkonwerter.addActionListener(this);
 						chOpcja = new JCheckBox("Opcja 2");
 							chOpcja.addActionListener(this);
-						MIustawienia = new JMenuItem("Ustawienia");
+						MIustawienia = new JMenuItem("Ustawienia",'U');
+						MIustawienia.setAccelerator(KeyStroke.getKeyStroke("ctrl U"));
 							MIustawienia.addActionListener(this);
 								
 						mMenuNarzedzia.add(MIkonwerter);
@@ -118,6 +121,7 @@ public class NotatnikMain extends JFrame implements ActionListener{
 				
 				tSzukamy = new JTextField();
 				tSzukamy.setBounds(580, 20, 150, 20);
+				tSzukamy.addActionListener(this);
 				add(tSzukamy);
 				
 				bSzukaj = new JButton("Szukaj");
@@ -249,7 +253,8 @@ public class NotatnikMain extends JFrame implements ActionListener{
 			
 			else if (zrodlo == MIustawienia){
 					Ustawienia ustawienia = new Ustawienia();
-			}
+					ustawienia.setVisible(true);
+					}
 			
 			else if (zrodlo == chOpcja){
 				
@@ -280,7 +285,7 @@ public class NotatnikMain extends JFrame implements ActionListener{
 			}
 		
 //---------------------ZAKLADKA WYSZUKAJ---------------------
-			else if (zrodlo == bSzukaj){
+			else if (zrodlo == bSzukaj || zrodlo == tSzukamy){
 					String tekst = notatnik.getText();
 					String szukane = tSzukamy.getText();
 					String wystapienia = "";
