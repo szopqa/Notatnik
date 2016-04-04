@@ -10,11 +10,13 @@ import javax.swing.JTextField;
 
 public class Ustawienia  extends JFrame implements ActionListener{
 
-	JLabel lZmianaTekstu,lObecnyTekst;
-	JTextField tNowyTekst;
-	JButton bUstaw;
+	JLabel lZmianaTekstu,lObecnyTekst,test;
+	JButton bZmien;
 	
 	static NotatnikMain notatnik = new NotatnikMain();
+	static Ustawienia ustawienia = new Ustawienia ();
+	
+	public String nowyTekst ;
 	
 	public Ustawienia(){
 		
@@ -35,30 +37,34 @@ public class Ustawienia  extends JFrame implements ActionListener{
 			
 			lObecnyTekst.setText("Obecny tekst "+aktualnyTekst);
 			lObecnyTekst.setFont(new Font("Sans Serif",Font.PLAIN,13));
-			lObecnyTekst.setBounds(2, 70, 500, 20);
+			lObecnyTekst.setBounds(2, 45, 500, 20);
 		
-		tNowyTekst = new JTextField("Wpisz nowy tekst");
+		bZmien = new JButton("Zmieñ");
 			
-			tNowyTekst.setBounds(2, 42, 250, 30);
-			tNowyTekst.addActionListener(this);
-			
-		bUstaw = new JButton("Ustaw");
-			
-			bUstaw.setBounds(265, 42, 100, 30);
-			bUstaw.addActionListener(this);
+			bZmien.setBounds(275, 20, 100, 30);
+			bZmien.addActionListener(this);
+	
+		test = new JLabel();
+		
+			test.setBounds(250, 100, 100, 20);
+			test.setText("Tu jestem!");
 			
 			add(lZmianaTekstu);
 			add(lObecnyTekst);
-			add(tNowyTekst);
-			add(bUstaw);
+			add(bZmien);
+			add(test);
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object zrodlo = e.getSource();
-		NotatnikMain objNotatnik = new NotatnikMain();
-		Ustawienia objUstawienia = new Ustawienia();
 		
-				//if (zrodlo == )
+				if(zrodlo == bZmien){
+					String nowyTekst = JOptionPane.showInputDialog("Wpisz nowy naglówek: ");
+					
+					test.setText(nowyTekst);
+					notatnik.lNaglowek.setText(nowyTekst);
+				}
+		
 	}
 }

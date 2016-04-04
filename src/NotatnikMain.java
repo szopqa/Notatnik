@@ -56,7 +56,8 @@ public class NotatnikMain extends JFrame implements ActionListener{
 			setLocation(490,100);
 			
 			
-			lNaglowek = new JLabel("Notatnik wersja 1.0");
+			lNaglowek = new JLabel();
+			lNaglowek.setText("Notatnik wersja 1.0");
 			lNaglowek.setBounds(50,20,200,20);
 			lNaglowek.setFont(new Font("Serif",Font.BOLD,20));
 			add(lNaglowek);
@@ -387,11 +388,8 @@ public static void main (String[] args){
 		
 		NotatnikMain aplikacja = new NotatnikMain();
 		aplikacja.setVisible(true);
-		//TODO
-		//Ustawienie skrótu na polecenie kopiuj i wklej
-		//Ustawienie skrotu na polecenie wyjscie
-		//Dokoñczenie menu Ustawien
-		//Próba zmiany koloru/czcionki tylko dla wybranego fragmentu tekstu 	
+		//TODO Dokoñczenie menu Ustawien
+		//TODO Próba zmiany koloru/czcionki tylko dla wybranego fragmentu tekstu 	
 	}
 	
 }
